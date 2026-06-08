@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 def get_db_connection():
     return mysql.connector.connect(
-        host="localhost",
+        host="mysql",
         user="root",
         password="varunesh1",
         database="employee_db"
@@ -101,4 +101,4 @@ def edit_employee(id):
     return render_template('edit_employee.html', employee=employee)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000, debug=True)
